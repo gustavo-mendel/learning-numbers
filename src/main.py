@@ -5,20 +5,19 @@ import functions
 functions.intro()
 
 numberAux = functions.getLanguage()
-lang = functions.setLang(numberAux)
+langShort = functions.setLang(numberAux)
+langLarge = functions.findLang(langShort)
 
-
-print(f"\nlang = {lang}")
 number = randint(0, 1001)
 ordinal = False
 
-word = num2words(number, ordinal, lang)
+word = num2words(number, ordinal, langShort)
 
-print(f"{number}: ", end='')
+print(f"\nHow to write the number {number} in {langLarge}?")
 resp = input()
 
-print("\n" + resp)
-print(word + "\n")
+print(f"\nRight answer: {word}")
+print(f"Your  answer: {resp}\n")
 
 if resp == word:
     print("Resposta correta")

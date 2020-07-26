@@ -51,13 +51,14 @@ def listAll():
 
 
 def getLanguage(number=4):
-    lang = setLang(number)
-    print(f"\nLanguage: {lang}")
+    langShort = setLang(number)
+    langLarge = findLang(langShort)
+    print(f"\nLanguage: {langLarge} [{langShort}]")
     change = input("Do you wanna change? [Y/n] ")
     while change not in "nNyY":
         change = input("Do you wanna change? [Y/n] ")
     if change in "yY":
-        print("We have these languages:")
+        print("\nWe have these languages:")
         listAll()
         number = int(input("\nNew Language: [0 to 34] "))
         while number not in range(0, 35):
@@ -74,4 +75,8 @@ def setLang(num):
             return v
 
 
-setLang(1)
+def findLang(idiom):
+    for k, v in lang.items():
+        if idiom == k:
+            return v
+            
