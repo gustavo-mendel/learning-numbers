@@ -80,3 +80,13 @@ def findLang(idiom):
         if idiom == k:
             return v
             
+
+def setOrdinal(ordinal=False):
+    print(f"\nOrdinal: {ordinal}")
+    change = input("Do you wanna activate Ordinal Numbers? [Y/n] ")
+    while change not in "nNyY":
+        change = input("Do you wanna change? [Y/n] ")
+    if change in "yY":
+        return True
+    else:
+        return False
